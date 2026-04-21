@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* QuizArena design system — electric, arcade-meets-editorial. All colors HSL. */
+
+@layer base {
+  :root {
+    --background: 240 28% 7%;
+    --foreground: 50 100% 96%;
+
+    --card: 240 24% 11%;
+    --card-foreground: 50 100% 96%;
+
+    --popover: 240 24% 11%;
+    --popover-foreground: 50 100% 96%;
+
+    --primary: 158 90% 55%;          /* electric mint */
+    --primary-foreground: 240 30% 8%;
+    --primary-glow: 158 95% 70%;
+
+    --secondary: 280 90% 65%;        /* ultraviolet */
+    --secondary-foreground: 240 30% 8%;
+
+    --accent: 45 100% 60%;           /* signal yellow */
+    --accent-foreground: 240 30% 8%;
+
+    --muted: 240 18% 18%;
+    --muted-foreground: 240 10% 70%;
+
+    --destructive: 350 90% 60%;
+    --destructive-foreground: 50 100% 96%;
+
+    --border: 240 20% 20%;
+    --input: 240 20% 16%;
+    --ring: 158 90% 55%;
+
+    --radius: 1rem;
+
+    --gradient-hero: linear-gradient(135deg, hsl(158 90% 55% / 0.9), hsl(280 90% 65% / 0.9));
+    --gradient-card: linear-gradient(160deg, hsl(240 24% 13%), hsl(240 28% 9%));
+    --gradient-stripe: repeating-linear-gradient(45deg, hsl(50 100% 96% / 0.04) 0 12px, transparent 12px 24px);
+
+    --shadow-glow: 0 0 60px -10px hsl(var(--primary) / 0.5);
+    --shadow-pop: 8px 8px 0 0 hsl(var(--foreground));
+    --shadow-elevated: 0 30px 80px -30px hsl(280 90% 30% / 0.6);
+
+    --transition-snappy: cubic-bezier(0.22, 1, 0.36, 1);
+
+    --sidebar-background: 240 24% 11%;
+    --sidebar-foreground: 50 100% 96%;
+    --sidebar-primary: 158 90% 55%;
+    --sidebar-primary-foreground: 240 30% 8%;
+    --sidebar-accent: 240 18% 18%;
+    --sidebar-accent-foreground: 50 100% 96%;
+    --sidebar-border: 240 20% 20%;
+    --sidebar-ring: 158 90% 55%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, hsl(var(--secondary) / 0.25), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 100% 100%, hsl(var(--primary) / 0.18), transparent 60%);
+    background-attachment: fixed;
+  }
+  h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.03em; }
+  .font-mono { font-family: 'JetBrains Mono', monospace; }
+}
+
+@layer utilities {
+  .bg-gradient-hero { background-image: var(--gradient-hero); }
+  .bg-gradient-card { background-image: var(--gradient-card); }
+  .bg-stripes { background-image: var(--gradient-stripe); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .shadow-pop { box-shadow: var(--shadow-pop); }
+  .shadow-elevated { box-shadow: var(--shadow-elevated); }
+  .text-stroke { -webkit-text-stroke: 2px hsl(var(--foreground)); color: transparent; }
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0.6); }
+  70% { box-shadow: 0 0 0 18px hsl(var(--primary) / 0); }
+  100% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0); }
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes float-in {
+  from { opacity: 0; transform: translateY(20px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-pulse-ring { animation: pulse-ring 1.6s ease-out infinite; }
+.animate-ticker { animation: ticker 30s linear infinite; }
+.animate-float-in { animation: float-in 0.5s var(--transition-snappy) both; }

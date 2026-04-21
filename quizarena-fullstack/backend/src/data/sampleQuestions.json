@@ -1,0 +1,14 @@
+[
+  { "prompt": "Which planet has the most moons?", "choices": ["Jupiter", "Saturn", "Uranus", "Neptune"], "correctIndex": 1, "category": "science" },
+  { "prompt": "Big-O of binary search?", "choices": ["O(n)", "O(log n)", "O(n log n)", "O(1)"], "correctIndex": 1, "category": "cs" },
+  { "prompt": "Who painted 'The Persistence of Memory'?", "choices": ["Picasso", "Monet", "Dalí", "Magritte"], "correctIndex": 2, "category": "art" },
+  { "prompt": "Capital of Australia?", "choices": ["Sydney", "Melbourne", "Canberra", "Perth"], "correctIndex": 2, "category": "geography" },
+  { "prompt": "HTTP status for 'I'm a teapot'?", "choices": ["402", "418", "451", "511"], "correctIndex": 1, "category": "cs" },
+  { "prompt": "Chemical symbol for gold?", "choices": ["Go", "Gd", "Au", "Ag"], "correctIndex": 2, "category": "science" },
+  { "prompt": "Who wrote '1984'?", "choices": ["Huxley", "Orwell", "Bradbury", "Atwood"], "correctIndex": 1, "category": "literature" },
+  { "prompt": "Year the World Wide Web was invented?", "choices": ["1983", "1989", "1995", "1991"], "correctIndex": 1, "category": "history" },
+  { "prompt": "Largest ocean on Earth?", "choices": ["Atlantic", "Indian", "Arctic", "Pacific"], "correctIndex": 3, "category": "geography" },
+  { "prompt": "Which language compiles to WebAssembly?", "choices": ["Python", "Rust", "Ruby", "PHP"], "correctIndex": 1, "category": "cs" },
+  { "prompt": "How many bits in an IPv6 address?", "choices": ["32", "64", "128", "256"], "correctIndex": 2, "category": "cs" },
+  { "prompt": "Who composed 'The Four Seasons'?", "choices": ["Bach", "Mozart", "Vivaldi", "Handel"], "correctIndex": 2, "category": "music" }
+]
